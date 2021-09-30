@@ -17,7 +17,7 @@
 //    0x000000000000014b <+46>:    retq
 // End of assembler dump.
 
-int ex4_solucao(long *rdi, long *rsi, int edx){
+int ex4_solucao(int *rdi, int *rsi, int edx){
     int ecx, eax, r10d;
     long r8, r9;
 
@@ -31,9 +31,9 @@ int ex4_solucao(long *rdi, long *rsi, int edx){
         r8 = ecx;
         r9 = eax;
 
-        r10d = rsi[r9];
+        r10d = (int) rsi[r8];
 
-        if(!(rdi[r8] != r10d)){
+        if(!(rdi[r9] != r10d)){
             ecx++;
         }
         else{

@@ -15,21 +15,30 @@
 
 short ex3_solucao(long *rdi, long *rsi, long rdx){
     long rcx;
-    int edx, eax;
+    unsigned int edx, eax;
 
     rcx = rdx;
-    edx = (long) *rdi;
-    eax = (long) *rsi;
+    edx = *rdi;
+    eax = *rsi;
 
-    *rdi = (short) eax;
-    *rsi = (short) edx;
+    short ax = (short) eax;
+    short dx = (short) edx;
+    
+    *rdi = ax;
+    *rsi = dx;
 
-    eax = (long) *rdi;
-    eax = ((long) eax*2)*4;
-    edx = ((long) edx*2)*2;
+    eax = *rdi;
+
+    long rax = (long) eax;
+    long rdx = (long) edx;
+    
+    eax = (rax*2)*4;
+    rdx = (rdx*2)*2;
     eax += edx;
 
-    rcx = (short) eax;
+    ax = (short) eax;
+
+    rcx = ax;
 
     return rcx;
 }
