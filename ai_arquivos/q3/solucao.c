@@ -13,8 +13,22 @@
 //    0x000000000000013e <+33>:    retq
 // End of assembler dump.
 
-void ex3_solucao(long rdx){
-    long rcx;
+short ex3_solucao(long *rdi, long *rsi, long rdx){
+    long rcx, edx, eax;
 
     rcx = rdx;
+    edx = *rdi;
+    eax = *rsi;
+
+    *rdi = (short) eax;
+    *rsi = (short) edx;
+
+    eax = *rdi;
+    eax = (eax*2)*4;
+    edx = (edx*2)*2;
+    eax += edx;
+
+    rcx = (short) eax;
+
+    return rcx;
 }
