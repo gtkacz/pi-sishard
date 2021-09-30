@@ -28,12 +28,12 @@ int ex4_solucao(int *rdi, int *rsi, int edx){
         eax -= ecx;
         eax--;
 
-        r8 = ecx;
         r9 = eax;
+        r8 = ecx;
 
-        r10d = (int) rsi[r8];
+        r10d = (int) rsi[r9];
 
-        if(!(rdi[r9] != r10d)){
+        if(!(rdi[r8] != r10d)){
             ecx++;
         }
         else{
