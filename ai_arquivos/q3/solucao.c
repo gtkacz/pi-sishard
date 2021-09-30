@@ -14,18 +14,19 @@
 // End of assembler dump.
 
 short ex3_solucao(long *rdi, long *rsi, long rdx){
-    long rcx, edx, eax;
+    long rcx;
+    int edx, eax;
 
     rcx = rdx;
-    edx = *rdi;
-    eax = *rsi;
+    edx = (long) *rdi;
+    eax = (long) *rsi;
 
     *rdi = (short) eax;
     *rsi = (short) edx;
 
-    eax = *rdi;
-    eax = (eax*2)*4;
-    edx = (edx*2)*2;
+    eax = (long) *rdi;
+    eax = ((long) eax*2)*4;
+    edx = ((long) edx*2)*2;
     eax += edx;
 
     rcx = (short) eax;

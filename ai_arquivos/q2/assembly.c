@@ -7,7 +7,9 @@
 // End of assembler dump.
 
 
-
+int func1(int edi){
+    return edi == 255;
+}
 
 
 // Dump of assembler code for function func2:
@@ -24,17 +26,40 @@
 //    0x00000000000011be <+37>:    retq
 // End of assembler dump.
 
+int global1 = 4000;
+int global2 = -6;
 
-void func2(){
-    ;
+int func2(int edi){
+    int eax;
+
+    if(!(global1 > edi)){
+        eax = 0;
+        return eax;
+    }
+    else if(!(global2 >= edi)){
+        eax = 1;
+        return eax;
+    }
+
+    eax = 0;
+    return eax;
 }
 
 
 // Dump of assembler code for function func3:
 //    0x00000000000011bf <+0>:     endbr64
-//    0x00000000000011c3 <+4>:     sub    $0x3e,%edi
+//    0x00000000000011c3 <+4>:     sub    $0x3e,%edi -> $0x3e = 62 
 //    0x00000000000011c6 <+7>:     cmp    $0x1,%edi
 //    0x00000000000011c9 <+10>:    setbe  %al
 //    0x00000000000011cc <+13>:    movzbl %al,%eax
 //    0x00000000000011cf <+16>:    retq
 // End of assembler dump.
+
+int func3(int edi){
+    int eax;
+
+    edi -= 62;
+    eax = (edi <= 1);
+
+    return eax;
+}
