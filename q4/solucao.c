@@ -29,8 +29,8 @@ int ex4_solucao(int *rdi, int *rsi, int edx){
         eax--;
 
         r9 = eax;
-        r8 = ecx;
-
+        r8 = ecx; 
+        
         r10d = (int) rsi[r9];
 
         if(!(rdi[r8] != r10d)){
